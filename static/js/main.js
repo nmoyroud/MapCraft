@@ -1400,6 +1400,11 @@ function SelectPiece(num) {
     pieces = kmllayer.getFeaturesByAttribute('name', num);
     if (pieces.length > 0)
         selectCtrl.select(pieces[0]);
+
+    if (selectedFeature !== null) {
+        olmap.zoomToExtent(selectedFeature.geometry.getBounds(),true);
+        olmap.zoomOut();
+    }
 }
 
 function selectPieceFromURL() {
@@ -1410,10 +1415,6 @@ function selectPieceFromURL() {
     }
 
     SelectPiece(hash);
-    if (selectedFeature !== null) {
-        olmap.zoomToExtent(selectedFeature.geometry.getBounds());
-        olmap.zoomOut();
-    }
 }
 
 function OpenViaRemote(method) {
