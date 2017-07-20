@@ -9,7 +9,7 @@ var ldata = [
 "Réglages",
 "Changement de pseudo",
 "Changer le Statut",
-"Retour",
+"JOSM",
 "Diagramme",
 "Aucun",
 "Ajouter",
